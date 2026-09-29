@@ -1,0 +1,618 @@
+/* ================================
+   CONFIGURAÇÃO GERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, #001a2e 0%, #050505 35%, #000000 100%);
+    color: white;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+header {
+    text-align: center;
+    padding: 55px 20px;
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 2px solid #00e5ff;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 30px rgba(0, 229, 255, 0.4);
+}
+
+header h1 {
+    color: #00e5ff;
+    font-size: 48px;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 5px #00e5ff,
+        0 0 15px #00e5ff,
+        0 0 30px #008cff;
+}
+
+header p {
+    color: #ffffff;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+main {
+    width: 90%;
+    max-width: 950px;
+    margin: 50px auto;
+}
+
+
+/* ================================
+   FOTO
+================================ */
+
+.foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.foto img {
+    width: 210px;
+    height: 210px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #00e5ff;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px #00e5ff,
+        0 0 50px rgba(0, 229, 255, 0.7);
+
+    transition: 0.4s ease;
+}
+
+.foto img:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 40px #00e5ff,
+        0 0 80px rgba(0, 229, 255, 0.8);
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+    position: relative;
+
+    background: rgba(10, 10, 10, 0.9);
+
+    padding: 32px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(0, 229, 255, 0.25);
+
+    border-left: 5px solid #00e5ff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.08),
+        inset 0 0 20px rgba(0, 229, 255, 0.02);
+
+    transition: 0.4s ease;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.card:hover {
+    transform: translateY(-7px);
+
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.4),
+        0 0 30px rgba(0, 229, 255, 0.2),
+        inset 0 0 20px rgba(0, 229, 255, 0.05);
+}
+
+
+/* ================================
+   TÍTULOS DOS CARDS
+================================ */
+
+.card h2 {
+    color: #00e5ff;
+
+    margin-bottom: 18px;
+
+    font-size: 27px;
+
+    text-shadow:
+        0 0 5px #00e5ff,
+        0 0 12px rgba(0, 229, 255, 0.7);
+}
+
+
+/* ================================
+   TEXTOS
+================================ */
+
+.card p {
+    color: #eeeeee;
+
+    margin-bottom: 15px;
+
+    font-size: 17px;
+}
+
+strong {
+    color: #00e5ff;
+
+    text-shadow:
+        0 0 5px rgba(0, 229, 255, 0.7);
+}
+
+
+/* ================================
+   LINHA NEON
+================================ */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00e5ff,
+        transparent
+    );
+
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+
+/* ================================
+   RODAPÉ
+================================ */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    background: #000000;
+
+    border-top: 2px solid #00e5ff;
+
+    color: #aaaaaa;
+
+    margin-top: 50px;
+
+    box-shadow:
+        0 -5px 25px rgba(0, 229, 255, 0.15);
+}
+
+footer p {
+    color: #00e5ff;
+
+    text-shadow:
+        0 0 5px #00e5ff;
+}
+
+
+/* ================================
+   ANIMAÇÃO NEON
+================================ */
+
+@keyframes neonPulse {
+
+    0% {
+        text-shadow:
+            0 0 5px #00e5ff,
+            0 0 10px #00e5ff;
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px #00e5ff,
+            0 0 25px #00e5ff,
+            0 0 40px #008cff;
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px #00e5ff,
+            0 0 10px #00e5ff;
+    }
+}
+
+header h1 {
+    animation: neonPulse 2s infinite;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .foto img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+}
+
+/* ================================
+   MENU DE NAVEGAÇÃO
+================================ */
+
+nav {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+nav a {
+    color: #00e5ff;
+
+    text-decoration: none;
+
+    padding: 9px 16px;
+
+    border: 1px solid #00e5ff;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+
+    text-shadow: 0 0 5px #00e5ff;
+}
+
+nav a:hover {
+    background: #00e5ff;
+
+    color: #000;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px #00e5ff;
+}
+
+
+/* ================================
+   PROJETOS
+================================ */
+
+.texto-projetos {
+    margin-bottom: 25px;
+}
+
+.projetos {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.projeto {
+    background: #080808;
+
+    padding: 25px;
+
+    border: 1px solid #0066ff;
+
+    border-radius: 12px;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 0 10px rgba(0, 102, 255, 0.15);
+}
+
+.projeto:hover {
+    transform: translateY(-8px);
+
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+.icone-projeto {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.projeto h3 {
+    color: #00e5ff;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 5px #00e5ff;
+}
+
+.projeto p {
+    color: #cccccc;
+
+    font-size: 15px;
+}
+
+.projeto span {
+    display: inline-block;
+
+    margin-top: 12px;
+    margin-right: 5px;
+
+    padding: 5px 10px;
+
+    border: 1px solid #00e5ff;
+
+    border-radius: 15px;
+
+    color: #00e5ff;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   CONTATOS
+================================ */
+
+.contatos {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.contato {
+    background: #080808;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid #0066ff;
+
+    transition: 0.3s;
+}
+
+.contato:hover {
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.contato strong {
+    font-size: 18px;
+}
+
+.contato p {
+    margin-top: 5px;
+
+    color: #cccccc;
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-card {
+    max-width: 550px;
+
+    margin: 50px auto;
+
+    padding: 35px;
+
+    background: #080808;
+
+    border: 2px solid #00e5ff;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.3),
+        0 0 40px rgba(0, 229, 255, 0.1);
+}
+
+.login-card h2 {
+    color: #00e5ff;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 8px #00e5ff;
+}
+
+.login-card > p {
+    text-align: center;
+
+    color: #aaa;
+
+    margin-bottom: 25px;
+}
+
+.login-card form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.login-card label {
+    color: #00e5ff;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+.login-card input {
+    width: 100%;
+
+    padding: 14px;
+
+    background: #000;
+
+    color: white;
+
+    border: 1px solid #0066ff;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.login-card input:focus {
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.login-card button {
+    margin-top: 20px;
+
+    padding: 14px;
+
+    background: #00e5ff;
+
+    color: #000;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-card button:hover {
+    background: #008cff;
+
+    color: white;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px #00e5ff;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 700px) {
+
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .contatos {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 7px 12px;
+    }
+}
